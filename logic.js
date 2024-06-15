@@ -22,3 +22,11 @@ function animalsLegs(chickens, cow, pigs) {
 }
 
 console.log(animalsLegs(2, 3, 5));  // output - 36
+
+//Que - 4
+//check two numbers and return true if the number is 100 or if the sum of the two numbers is 100
+
+const isEqualTo100 = (a, b) => a === 100 || b === 100 || (a + b) === 100;
+console.log(isEqualTo100(100, 0));  //true
+console.log(isEqualTo100(50, 30));  //false
+console.log(isEqualTo100(80, 20));  //true
