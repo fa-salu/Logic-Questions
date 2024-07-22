@@ -29,3 +29,19 @@ for (var i = 1; i <= 5; i++) {
     }
     console.log(pattern);
 }
+
+
+
+//butterfly
+
+for (var i=1; i<=5; i++){
+    let star = '';
+    for (j=1; j<=5; j++) {
+        if(j==1||j==5 || i+j==6||i==j) {
+            star += '* ';
+        } else {
+            star +='  ';
+        }
+    }
+    console.log(star);
+}
