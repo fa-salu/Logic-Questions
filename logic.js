@@ -70,3 +70,49 @@ function notRepeatChar(str) {
   return null;
 }
 console.log(notRepeatChar('hhello')); // output: 'e'
+
+
+// Que - 8
+// two array concat, sort and merge
+// output = [ 1, 2, 3, 4, 5, 6 ]
+
+function sortedArr(arr1, arr2) {
+  const arr = arr1.concat(arr2)
+  return arr.sort((a,b) => a - b)
+}
+
+console.log(sortedArr([1,3,5],[2,4,6]))
+
+
+// another without sort and merge method
+function sortedArr (arr1, arr2) {
+  const newArr = []
+  for(let i = 0; i <arr1.length; i++) {
+          newArr.push(arr1[i])
+          newArr.push(arr2[i])
+  }
+  return newArr
+}
+
+console.log(sortedArr([1,3,5],[2,4,6]))
+
+
+//Que - 9
+// Find Duplicate Numbers from array
+
+function findDuplicates(arr) {
+  let count = {}
+  let duplicate = []
+  for (let i = 0; i < arr.length; i++) {
+      count[arr[i]] = (count[arr[i]] || 0) + 1
+  }
+  
+ for (let key in count) {
+     if (count[key] > 1) {
+         duplicate.push(Number(key))
+     }
+ }
+  return duplicate
+}
+
+console.log(findDuplicates([1, 2, 3, 4, 5, 6, 3, 2, 7, 8]));  
