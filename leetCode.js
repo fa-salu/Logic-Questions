@@ -20,3 +20,20 @@ Array.prototype.last = function() {
         return this[this.length - 1]
     }
 };
+
+// 4. Median of Two Sorted Arrays
+var findMedianSortedArrays = function(nums1, nums2) {
+    let newArr = nums1.concat(nums2);
+    newArr.sort((a, b) => a - b);
+    
+    let n = newArr.length;
+    
+    if (n % 2 === 1) {
+        return newArr[Math.floor(n / 2)];
+    }
+    else {
+        let middle1 = newArr[Math.floor((n - 1) / 2)];
+        let middle2 = newArr[Math.floor(n / 2)];
+        return (middle1 + middle2) / 2;
+    }
+};
