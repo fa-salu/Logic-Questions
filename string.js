@@ -33,3 +33,15 @@ function FirstChar (str, char) {
 
 console.log(FirstChar("mississipp", "p")
 console.log(FirstChar("Hello", "p")
+
+
+// Check if a string starts with another string
+// input =  str1 = "morning glory", str2 = "morning"
+// output = true // if not false
+
+function StartAnotherString (str1, str2) {
+    return str1.startsWith(str2)
+}
+
+console.log(StartAnotherString("morning glory", "morning"))
+console.log(StartAnotherString("morning glory", "good"))
