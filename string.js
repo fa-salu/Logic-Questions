@@ -13,3 +13,23 @@ function ContainAnotherString(mainStr, subStr) {
 
 console.log(ContainAnotherString("hello world", "world"));
 console.log(ContainAnotherString("javascript", "python"));
+
+// Find the first occurence of a charecter
+// input str= "mississippi", char = "p"
+// output = 8
+
+function FirstChar (str, char) {
+    str.split(',')
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === char) {
+            return i
+        }
+    }
+    return -1
+
+    // single line code 
+    // retrun str.indexOf(char)
+}
+
+console.log(FirstChar("mississipp", "p")
+console.log(FirstChar("Hello", "p")
