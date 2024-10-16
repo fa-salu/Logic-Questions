@@ -54,3 +54,12 @@ var removeDuplicates = function(nums) {
     
     return i + 1;
 };
+
+
+// array que - 66
+
+var plusOne = function(digits) {
+    let res = BigInt(digits.join(''))
+    let inc = String(BigInt(res) + 1n)
+    return inc.toString().split('').map(Number)
+};
