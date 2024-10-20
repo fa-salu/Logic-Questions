@@ -115,3 +115,26 @@ var lengthOfLastWord = function(s) {
     return word[word.length -1].length
 
 };
+
+
+
+// (string)  709. To Lower Case
+
+var toLowerCase = function(s) {
+    return s.toLowerCase()
+};
+
+
+// (string) 2129. Capitalize the Title
+
+var capitalizeTitle = function(title) {
+    let word = title.toLowerCase().split(" ")
+    for(let i = 0; i < word.length; i++) {
+        if (word[i].length <= 2) {
+            word[i] = word[i].toLowerCase()
+        } else {
+            word[i] = word[i][0].toUpperCase() + word[i].slice(1)
+        }
+    } 
+    return word.join(' ')
+};
