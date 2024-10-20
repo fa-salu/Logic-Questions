@@ -12,7 +12,7 @@ var chunk = function(arr, size) {
 
 
 
-// 2619 - Array Prototype Last
+// (array)  2619 - Array Prototype Last
 Array.prototype.last = function() {
     if (this.length === 0) {
         return -1;
@@ -21,7 +21,7 @@ Array.prototype.last = function() {
     }
 };
 
-// 4. Median of Two Sorted Arrays
+// (array)  4. Median of Two Sorted Arrays
 var findMedianSortedArrays = function(nums1, nums2) {
     let newArr = nums1.concat(nums2);
     newArr.sort((a, b) => a - b);
@@ -39,7 +39,7 @@ var findMedianSortedArrays = function(nums1, nums2) {
 };
 
 
-// 26. Remove Duplicates from Sorted Array
+//(array)  26. Remove Duplicates from Sorted Array
 var removeDuplicates = function(nums) {
     if (nums.length === 0) return 0;
     
@@ -56,7 +56,7 @@ var removeDuplicates = function(nums) {
 };
 
 
-// array que - 66
+// (array) que - 66
 
 var plusOne = function(digits) {
     let res = BigInt(digits.join(''))
@@ -65,7 +65,7 @@ var plusOne = function(digits) {
 };
 
 
-// string 20. Valid Parentheses
+// (string) 20. Valid Parentheses
 
 var isValid = function(s) {   
     const stack = [];
@@ -90,7 +90,7 @@ var isValid = function(s) {
 };
 
 
-// 14. Longest Common Prefix
+// (string )14. Longest Common Prefix
 
 var longestCommonPrefix = function (strs) {
   let prefix = strs[0];
@@ -104,4 +104,14 @@ var longestCommonPrefix = function (strs) {
     }
   }
   return prefix;
+};
+
+
+
+// (string)  58. Length of Last Word
+
+var lengthOfLastWord = function(s) {
+    let word = s.trim().split(' ')
+    return word[word.length -1].length
+
 };
