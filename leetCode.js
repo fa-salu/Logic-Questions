@@ -138,3 +138,16 @@ var capitalizeTitle = function(title) {
     } 
     return word.join(' ')
 };
+
+
+// (array)  217. Contains Duplicate
+
+var containsDuplicate = function(nums) {
+    nums.sort((a,b) => a - b)
+    for (let i = 0; i < nums.length; i++ ) {
+        if (nums[i] === nums[i + 1]) {
+            return true
+        }
+    }
+    return false
+};
