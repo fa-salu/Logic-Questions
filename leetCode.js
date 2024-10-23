@@ -157,7 +157,7 @@ var containsDuplicate = function(nums) {
 // (strint) 125. Valid Palindrome
 
 var isPalindrome = function(s) {
-    let pal = s.toLowerCase().replace(/[^a-z0-1]/g, '')
+    let pal = s.toLowerCase().replace(/[^a-z0-9]/g, '')
     if (pal === pal.split('').reverse().join('')) {
         return true
     }
