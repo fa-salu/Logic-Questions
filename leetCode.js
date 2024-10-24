@@ -154,7 +154,7 @@ var containsDuplicate = function(nums) {
 
 
 
-// (strint) 125. Valid Palindrome
+// (string) 125. Valid Palindrome
 
 var isPalindrome = function(s) {
     let pal = s.toLowerCase().replace(/[^a-z0-9]/g, '')
@@ -162,4 +162,18 @@ var isPalindrome = function(s) {
         return true
     }
     return false
+};
+
+
+// (string) 168. Excel Sheet Column Title
+
+var convertToTitle = function(columnNumber) {
+    let res = ''
+    while(columnNumber > 0) {
+        columnNumber--
+        let remain = columnNumber % 26
+        res = String.fromCharCode(65 + remain) + res
+        columnNumber = Math.floor(columnNumber / 26)
+    }
+    return res
 };
