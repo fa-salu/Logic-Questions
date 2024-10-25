@@ -177,3 +177,14 @@ var convertToTitle = function(columnNumber) {
     }
     return res
 };
+
+
+
+// (strint) IsAnagram
+
+var isAnagram = function(s, t) {
+   let ss =  s.split('').sort().join('')
+   let tt = t.split('').sort().join('')
+
+    return ss === tt
+};
