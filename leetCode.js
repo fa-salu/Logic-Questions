@@ -188,3 +188,19 @@ var isAnagram = function(s, t) {
 
     return ss === tt
 };
+
+
+
+// (string) 49. Group Anagrams
+
+var groupAnagrams = function(strs) {
+    let anagram = {}
+    for (let i = 0; i < strs.length; i++) {
+        let sorted = strs[i].split('').sort().join('')
+        if (!anagram[sorted]) {
+            anagram[sorted] = []
+        }
+        anagram[sorted].push(strs[i])
+    }
+    return Object.values(anagram)
+};
