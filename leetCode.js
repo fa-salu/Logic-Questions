@@ -204,3 +204,10 @@ var groupAnagrams = function(strs) {
     }
     return Object.values(anagram)
 };
+
+
+// (string) 344. Reverse String
+
+var reverseString = function(s) {
+    return s.reverse()
+};
