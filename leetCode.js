@@ -211,3 +211,17 @@ var groupAnagrams = function(strs) {
 var reverseString = function(s) {
     return s.reverse()
 };
+
+
+// (array) 268. Missing Number
+
+var missingNumber = function(nums) {
+    let sorted = nums.sort((a,b) => a - b)
+    for (let i = 0; i < sorted.length; i++)  {
+        if (sorted[i] !== i) {
+            return i
+        } 
+    }
+    return sorted.length
+    
+};
