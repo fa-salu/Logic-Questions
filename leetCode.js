@@ -225,3 +225,16 @@ var missingNumber = function(nums) {
     return sorted.length
     
 };
+
+// (array) 349. Intersection of Two Arrays
+
+var intersection = function(nums1, nums2) {
+    const nums = new Set(nums1)
+    const res = new Set()
+    for (const num of nums2) {
+        if (nums.has(num)) {
+            res.add(num)
+        }
+    }
+    return Array.from(res)
+};
