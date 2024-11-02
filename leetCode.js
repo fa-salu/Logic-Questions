@@ -238,3 +238,18 @@ var intersection = function(nums1, nums2) {
     }
     return Array.from(res)
 };
+
+
+// 2490. Circular Sentence
+
+var isCircularSentence = function (sentence) {
+  if (sentence[0] !== sentence.at(-1)) return false;
+  const words = sentence.split(" ");
+
+  for (let i = 1; i < words.length; i++) {
+    const current = words[i];
+    const perv = words[i - 1];
+    if (current[0] !== perv.at(-1)) return false;
+  }
+  return true;
+};
