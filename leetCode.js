@@ -253,3 +253,16 @@ var isCircularSentence = function (sentence) {
   }
   return true;
 };
+
+
+// 796. Rotate String
+
+var rotateString = function (s, goal) {
+  for (let i = 0; i < s.length; i++) {
+    const rotated = s.slice(i) + s.slice(0, i);
+    console.log(rotated);
+
+    if (rotated === goal) return true;
+  }
+  return false;
+};
