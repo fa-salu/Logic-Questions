@@ -296,3 +296,78 @@ function isPalindrome(s, left, right) {
     }
     return true;
 }
+
+
+//3163. String Compression III
+var compressedString = function (word) {
+  let comp = "";
+  let count = 1;
+
+  for (let i = 0; i < word.length; i++) {
+    if (word[i] === word[i + 1]) {
+      count++;
+      if (count === 9) {
+        comp += count + word[i];
+        count = 0;
+      }
+    } else {
+      if (count > 0) {
+        comp += count + word[i];
+      }
+      count = 1;
+    }
+  }
+
+  return comp;
+};
+
+
+
+// 443. String Compression  
+// my own way to find this other way but this not accept leetcode
+var compress = function (chars) {
+  let comp = "";
+  let count = 1;
+  for (let i = 0; i < chars.length; i++) {
+    if (chars[i] === chars[i + 1]) {
+      count++;
+    } else {
+      comp += chars[i];
+      if (count > 1) {
+        comp += count;
+      }
+      count = 1;
+    }
+  }
+
+  return comp.split("");
+};
+
+console.log(compress(["a", "a", "b", "b", "c", "c", "c"])); //[ a,2,b,2,c,2]
+console.log(compress(["a"])); // [a]
+console.log(
+  compress(["a", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b"])
+); // [a,b,1,2]
+// leetcode solution
+var compress = function(chars) {
+  let writeIndex = 0; 
+  let count = 1;
+
+  for (let i = 0; i < chars.length; i++) {
+    if (i < chars.length - 1 && chars[i] === chars[i + 1]) {
+      count++;
+    } else {
+      chars[writeIndex] = chars[i];
+      writeIndex++;
+      if (count > 1) {
+        const countStr = count.toString();
+        for (let c of countStr) {
+          chars[writeIndex] = c;
+          writeIndex++;
+        }
+      }
+      count = 1;
+    }
+  }
+  return writeIndex;
+};
