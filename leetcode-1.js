@@ -61,3 +61,19 @@ var isPowerOfTwo = function (n) {
     }
     return false;
 };
+
+// 326. Power of Three
+var isPowerOfThree = function (n) {
+    for (let i = 0; i <= 30; i++) {
+        if (Math.pow(3, i) === n) return true
+    }
+    return false
+};
+
+// 342. Power of Four
+var isPowerOfFour = function (n) {
+    for (let i = 0; i <= 30; i++) {
+        if (Math.pow(4, i) === n) return true
+    }
+    return false
+};
