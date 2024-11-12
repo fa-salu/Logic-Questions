@@ -51,3 +51,13 @@ var singleNumber = function (nums) {
     }
     return singleNum;
 };
+
+
+// 231. Power of Two
+
+var isPowerOfTwo = function (n) {
+    for (let i = 0; i <= 30; i++) {
+        if (Math.pow(2, i) === n) return true;
+    }
+    return false;
+};
