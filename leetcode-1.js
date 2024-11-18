@@ -100,3 +100,29 @@ var inter = function (nums1, nums2) {
   return result;
 };
 console.log(inter([2, 5, 3], [5, 7, 2]));
+
+
+// 1652. Defuse the Bomb
+
+var decrypt = function (code, k) {
+  const n = code.length;
+  const result = new Array(n).fill(0);
+
+  if (k === 0) return result;
+
+  for (let i = 0; i < n; i++) {
+    let sum = 0;
+    if (k > 0) {
+      for (let j = 1; j <= k; j++) {
+        sum += code[(i + j) % n];
+      }
+    } else {
+      for (let j = 1; j <= -k; j++) {
+        sum += code[(i - j + n) % n];
+      }
+    }
+    result[i] = sum;
+  }
+
+  return result;
+};
