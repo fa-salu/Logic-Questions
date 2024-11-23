@@ -7,7 +7,7 @@ var isPalindrome = function (x) {
 };
 
 // 5. Longest Palindromic Substring
-ar longestPalindrome = function (s) {
+const longestPalindrome = function (s) {
   let longest = "";
   function expandAroundCenter(s, left, right) {
     while (left >= 0 && right < s.length && s[left] === s[right]) {
@@ -27,57 +27,53 @@ ar longestPalindrome = function (s) {
   return longest;
 };
 
-
 // 83. Remove Duplicates from Sorted List
 
 var deleteDuplicates = function (head) {
-    let current = head;
-    while (current !== null && current.next !== null) {
-        if (current.val === current.next.val) {
-            current.next = current.next.next;
-        } else {
-            current = current.next;
-        }
+  let current = head;
+  while (current !== null && current.next !== null) {
+    if (current.val === current.next.val) {
+      current.next = current.next.next;
+    } else {
+      current = current.next;
     }
-    return head;
+  }
+  return head;
 };
-
 
 // 136. Single Number
 var singleNumber = function (nums) {
-    let singleNum = 0;
-    for (let num of nums) {
-        singleNum ^= num;
-    }
-    return singleNum;
+  let singleNum = 0;
+  for (let num of nums) {
+    singleNum ^= num;
+  }
+  return singleNum;
 };
-
 
 // 231. Power of Two
 
 var isPowerOfTwo = function (n) {
-    for (let i = 0; i <= 30; i++) {
-        if (Math.pow(2, i) === n) return true;
-    }
-    return false;
+  for (let i = 0; i <= 30; i++) {
+    if (Math.pow(2, i) === n) return true;
+  }
+  return false;
 };
 
 // 326. Power of Three
 var isPowerOfThree = function (n) {
-    for (let i = 0; i <= 30; i++) {
-        if (Math.pow(3, i) === n) return true
-    }
-    return false
+  for (let i = 0; i <= 30; i++) {
+    if (Math.pow(3, i) === n) return true;
+  }
+  return false;
 };
 
 // 342. Power of Four
 var isPowerOfFour = function (n) {
-    for (let i = 0; i <= 30; i++) {
-        if (Math.pow(4, i) === n) return true
-    }
-    return false
+  for (let i = 0; i <= 30; i++) {
+    if (Math.pow(4, i) === n) return true;
+  }
+  return false;
 };
-
 
 // 371. Sum of Two Integers
 var inter = function (nums1, nums2) {
@@ -100,7 +96,6 @@ var inter = function (nums1, nums2) {
   return result;
 };
 console.log(inter([2, 5, 3], [5, 7, 2]));
-
 
 // 1652. Defuse the Bomb
 
@@ -125,4 +120,26 @@ var decrypt = function (code, k) {
   }
 
   return result;
+};
+
+// 1002 - common charecters
+const commonChars = (words) => {
+  let ans = [];
+  let word = words[0];
+
+  for (let i = 0; i < word.length; i++) {
+    let count = 0;
+    for (let j = 0; j < words.length; j++) {
+      const index = words[j].indexOf(word[i]);
+      if (index !== -1) {
+        count++;
+        words[j] = words[j].slice(0, index) + words[j].slice(index + 1);
+      }
+    }
+    if (count === words.length) {
+      ans.push(word[i]);
+    }
+  }
+
+  return ans;
 };
