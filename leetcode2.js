@@ -46,3 +46,21 @@ var sortColors = function (nums) {
 
 };
 console.log(sortColors([2,0,1])); // [0,0,1,1,2,2]
+
+
+// 41. First Missing Positive
+var firstMissingPositive = function (nums) {
+  if (nums.length === 1) {
+      if (nums[0] === 1) return 2
+  }
+  let sorted = nums.sort((a, b) => a - b)
+
+  let num = 1
+  for (let i = 0; i < sorted.length; i++) {
+      if (num === sorted[i]) {
+          num++
+          continue
+      }
+  }
+  return num
+};
