@@ -42,25 +42,32 @@ var sortColors = function (nums) {
     }
   }
 
-  return nums
-
+  return nums;
 };
-console.log(sortColors([2,0,1])); // [0,0,1,1,2,2]
-
 
 // 41. First Missing Positive
 var firstMissingPositive = function (nums) {
   if (nums.length === 1) {
-      if (nums[0] === 1) return 2
+    if (nums[0] === 1) return 2;
   }
-  let sorted = nums.sort((a, b) => a - b)
+  let sorted = nums.sort((a, b) => a - b);
 
-  let num = 1
+  let num = 1;
   for (let i = 0; i < sorted.length; i++) {
-      if (num === sorted[i]) {
-          num++
-          continue
-      }
+    if (num === sorted[i]) {
+      num++;
+      continue;
+    }
   }
-  return num
+  return num;
+};
+
+// 1455. Check If a Word Occurs As a Prefix of Any Word in a Sentence
+
+var isPrefixOfWord = function (sentence, searchWord) {
+  let words = sentence.split(" ");
+  for (let i = 0; i < words.length; i++) {
+    if (words[i].startsWith(searchWord)) return i + 1;
+  }
+  return -1;
 };
