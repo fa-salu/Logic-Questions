@@ -71,3 +71,20 @@ var isPrefixOfWord = function (sentence, searchWord) {
   }
   return -1;
 };
+
+// 2109. Adding Spaces to a String
+
+var addSpaces = function (s, spaces) {
+  let result = "";
+  let spaceIndex = 0;
+  for (let i = 0; i < s.length; i++) {
+    if (spaceIndex < spaces.length && spaces[spaceIndex] === i) {
+      result += " ";
+      spaceIndex++;
+    }
+    result += s[i];
+  }
+  return result;
+};
+console.log(addSpaces("LeetcodeHelpsMeLearn", (spaces = [8, 13, 15])));
+console.log(addSpaces("spacing", (spaces = [0, 1, 2, 3, 4, 5, 6])));
