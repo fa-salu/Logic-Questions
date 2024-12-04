@@ -86,5 +86,13 @@ var addSpaces = function (s, spaces) {
   }
   return result;
 };
-console.log(addSpaces("LeetcodeHelpsMeLearn", (spaces = [8, 13, 15])));
-console.log(addSpaces("spacing", (spaces = [0, 1, 2, 3, 4, 5, 6])));
+
+// 3110. Score of a String
+var scoreOfString = function (s) {
+  let score = 0;
+  for (let i = 0; i < s.length - 1; i++) {
+    score += Math.abs(s.charCodeAt(i) - s.charCodeAt(i + 1));
+  }
+
+  return score;
+};
