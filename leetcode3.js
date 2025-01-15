@@ -75,3 +75,15 @@ var longestParentheses = function (s) {
 // console.log(longestParentheses("()(())")); // Output: 6
 // console.log(longestParentheses(")()())")); // Output: 4
 // console.log(longestParentheses("()")); // Output: 0
+
+// 747. Largest Number At Least Twice of Others
+var dominantIndex = function (nums) {
+  let maxVal = Math.max(...nums);
+  let maxIndex = nums.indexOf(maxVal);
+  for (let i = 0; i < nums.length; i++) {
+    if (i !== maxIndex && nums[i] * 2 > maxVal) {
+      return -1;
+    }
+  }
+  return maxIndex;
+};
