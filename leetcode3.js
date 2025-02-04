@@ -87,3 +87,18 @@ var dominantIndex = function (nums) {
   }
   return maxIndex;
 };
+
+
+//1800. Maximum Ascending Subarray Sum
+var maxAscendingSum = function(nums) {
+    let sum = nums[0] , total = sum
+    for (let i = 1; i < nums.length; i++) {
+        if (nums[i] > nums[i - 1]) {
+            sum += nums[i]
+        } else {
+            sum = nums[i]
+        }
+        total = Math.max(total, sum)
+    }
+    return total
+};
