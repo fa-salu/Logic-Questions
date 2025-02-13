@@ -98,7 +98,26 @@ var maxAscendingSum = function(nums) {
         } else {
             sum = nums[i]
         }
+      
         total = Math.max(total, sum)
     }
     return total
 };
+
+
+
+// 2938. Separate Black and White Balls
+var minimumSteps = function (s) {
+  let res = 0;
+  let black = 0;
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] === "0") {
+      res += black;
+    } else {
+      black++;
+    }
+  }
+  return res;
+};
+
+console.log(minimumSteps("101010"));
