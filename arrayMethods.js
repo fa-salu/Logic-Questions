@@ -42,6 +42,10 @@ function removeDp(arrs) {
 
 const newA = removeDp(arrs)
 console.log(newA);
+//using Set method
+function removeDup(arr) {
+    return [...new Set(arr)]
+}
 
 
 // Find the Intersection of Two Arrays
