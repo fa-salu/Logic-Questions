@@ -10,3 +10,17 @@ var repeatedCharacter = function(s) {
         }
     }
 };
+
+// 347. Top K Frequent Elements
+var topKFrequent = function (nums, k) {
+    let map = {}
+    let res = []
+
+    for (let n of nums) {
+        map[n] = (map[n] || 0) + 1
+    }
+
+    return Object.keys(map)
+        .sort((a, b) => map[b] - map[a])
+        .slice(0, k).map(Number)
+};
