@@ -24,3 +24,14 @@ var topKFrequent = function (nums, k) {
         .sort((a, b) => map[b] - map[a])
         .slice(0, k).map(Number)
 };
+
+// 2278. Percentage of Letter in String
+var percentageLetter = function (s, letter) {
+    let count = 0
+    for (let char of s) {
+        if (char === letter) {
+            count++
+        }
+    }
+    return Math.floor(count / s.length * 100)
+};
