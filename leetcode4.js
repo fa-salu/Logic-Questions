@@ -50,3 +50,20 @@ var singleNumber = function (nums) {
         }
     }
 };
+
+// 260. Single Number III
+var singleNumber = function (nums) {
+    let map = {}
+    let res = []
+
+    for (let n of nums) {
+        map[n] = (map[n] || 0) + 1
+    }
+
+    for (let [key, values] of Object.entries(map)) {
+        if (values === 1) {
+            res.push(Number(key))
+        }
+    }
+    return res
+};
