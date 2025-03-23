@@ -56,3 +56,19 @@ function findIntersection(arr1, arr2) {
 
 console.log(findIntersection([1, 2, 3, 4], [3, 4, 5, 6])); // Output: [3, 4]
 
+
+// Find second largest number in array without sorting 
+function pr(nums) {
+    let l = -1, s = -1
+    
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] > l)  {
+         s = l
+         l = nums[i]
+        } else if (nums[i] < l && nums[i] > s) {
+            s = nums[i]
+        } 
+   }
+   return  s
+}
+
