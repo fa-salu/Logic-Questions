@@ -67,3 +67,22 @@ var singleNumber = function (nums) {
     }
     return res
 };
+
+
+// 1207. Unique Number of Occurrences
+var uniqueOccurrences = function (arr) {
+    let map = {}
+    let set = new Set()
+
+    for (let n of arr) {
+        map[n] = (map[n] || 0) + 1
+    }
+
+    for (let count of Object.values(map)) {
+        if (set.has(count)) {
+            return false
+        }
+        set.add(count)
+    }
+    return true
+};
