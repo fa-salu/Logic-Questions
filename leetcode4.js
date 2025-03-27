@@ -86,3 +86,12 @@ var uniqueOccurrences = function (arr) {
     }
     return true
 };
+
+// 136. Single Number
+var singleNumber = function (nums) {
+    let singleNum = 0;
+    for (let num of nums) {
+        singleNum ^= num;
+    }
+    return singleNum;
+};
